@@ -1,4 +1,4 @@
-# Machine_Learning_Feature_Selection_in_R
+# Machine Learning Tutorial 01: Feature Selection in R
 In this tutorial, we explore various linear modeling and feature selection techniques using a baseball dataset. The goal is to identify the most important predictors of player salaries and understand how different methods approach feature selection and regularization.
 
 We will cover:  
@@ -69,3 +69,17 @@ dim(Hitters)       # dimensions
 
 We clean, transform, and split the data into training, validation, and test sets. Categorical variables are converted into numeric dummy variables, and all features are scaled for stable modeling. The target is centered to improve numerical stability, which is essential for regression and regularization methods.
 
+
+### 5.Exploratory Data Analysis: Pairwise Relationships
+
+Here we visualize the salary distribution after cleaning and log-transform. This helps us understand the distribution of the target variable and the effect of log transformation
+
+We also visualize the relationships among numerical variables and the response (`Salary`) using scatterplot matrices. This helps identify correlations and potential patterns in the data.
+
+### Salary Distributions
+![Salary Histogram](Figures/salary_histogram.png)
+![Log Salary Histogram](Figures/logsalary_histogram.png)
+
+### Pairwise Relationships
+![Pairs Plot Group 1](Figures/pairs_group1.png)
+![Pairs Plot Group 2](Figures/pairs_group2.png)
