@@ -64,3 +64,8 @@ summary(Hitters)   # summary stats
 head(Hitters)      # first rows
 dim(Hitters)       # dimensions
 ```
+
+### 4.Data Preparation: Handling Numeric and Categorical Variables
+
+We clean, transform, and split the data into training, validation, and test sets. Categorical variables are converted into numeric dummy variables, and all features are scaled for stable modeling. The target is centered to improve numerical stability, which is essential for regression and regularization methods.
+
