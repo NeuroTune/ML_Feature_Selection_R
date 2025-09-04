@@ -135,3 +135,6 @@ Elastic Net combines **Lasso** (L1) and **Ridge** (L2) penalties.
 - Performs variable selection like Lasso while handling correlated predictors like Ridge.  
 - Optimal regularization strength (λ) is chosen via cross-validation.  
 - Some coefficients shrink toward zero, while others are retained, producing a stable and predictive model.
+
+![Elastic Net Coefficient Paths](Figures/elasticnet_coeff_paths.png)
+
