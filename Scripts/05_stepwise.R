@@ -1,6 +1,6 @@
 library(MASS)  # stepAIC
-train_df <- as.data.frame(X_train)   # matrix to data frame
-train_df$LogSalary <- y_train        # target added
+train_df <- as.data.frame(X_train)   
+train_df$LogSalary <- y_train       
 
 # Forward stepwise selection
 fit0 <- lm(LogSalary ~ 1, data = train_df)  # start with intercept only
