@@ -1,5 +1,5 @@
 # Machine Learning Tutorial 01: Feature Selection in R
-In this tutorial, we explore various linear modeling and feature selection techniques using a baseball dataset. The goal is to identify the most important predictors of player salaries and understand how different methods approach feature selection and regularization.
+In this tutorial, we use a baseball dataset to explore feature selection. The goal is to find which factors best predict player salaries and see how different methods handle selection and regularization.We’ll also look at regularization paths to see how coefficients change as we adjust the tuning parameter.
 
 We will cover:  
 
@@ -9,10 +9,6 @@ We will cover:
 4. **Best Subsets**
 5. **Stepwise Selection** – Forward & Backward  
 10. **Regularization Methods** – Lasso and Elastic Net
-
-Additionally, we will **visualize regularization paths** to see how coefficients change with tuning parameters, and evaluate model performance on training, validation, and test sets.  
-
-This tutorial combines **theory, coding, and interpretation** so you can both implement these methods in R and understand their practical implications for prediction and feature selection.
 
 ## Setup Instructions
 
@@ -90,7 +86,7 @@ We fit a standard linear regression (Least Squares) model to predict log-transfo
 
 ### 7.Best Subsets for Feature Selection
 
-Identify the best combination of predictors to explain log-salary using criteria like **Adjusted R², Cp, and BIC**.
+The best combination of predictors for log-salary can be identified using **Adjusted R², Cp, and BIC**:
 
 - **Adjusted R²:** Higher is better; balances variance explained and model complexity.  
 - **Cp:** Lower is better; balances bias and variance.  
@@ -98,9 +94,6 @@ Identify the best combination of predictors to explain log-salary using criteria
 
 Focus on predictors consistently chosen across criteria — these are likely the most important features.
 
-### Best Subsets Feature Selection
-
-#### Plots
 ![Best Subsets Adj.R²](Figures/bestsub_adjR2.png)  
 ![Best Subsets Cp](Figures/bestsub_Cp.png)  
 ![Best Subsets BIC](Figures/bestsub_BIC.png)

@@ -18,21 +18,21 @@ summary(Hitters)   # summary statistics
 head(Hitters)      # first rows
 dim(Hitters)       # number of rows and columns
 
-# 1. Clean the data
+# Clean the data
 cleaned_hitters <- na.omit(Hitters)
 cat("Original dimensions:", dim(Hitters), "\n")
 cat("Cleaned dimensions:", dim(cleaned_hitters), "\n")
 
-# 2. Response variable (log-transformed Salary)
+# Response variable (log-transformed Salary)
 y <- log(cleaned_hitters$Salary)
 
-# 3. Features: numeric + categorical (convert factors to dummies)
+# Features: numeric + categorical (convert factors to dummies)
 X <- model.matrix(y ~ . , data = cleaned_hitters)[, -1]  # drop intercept
 
 # Combine into a single organized dataset (target first)
 organized_data <- cbind(y, X)
 
-# 4. Function to split and scale data
+# Function to split and scale data
 split_and_scale_data <- function(data, train_prop = 0.6, valid_prop = 0.2) {
   N <- nrow(data)
   
@@ -75,10 +75,10 @@ split_and_scale_data <- function(data, train_prop = 0.6, valid_prop = 0.2) {
   ))
 }
 
-# 5. Apply the function
+# Apply the function
 data_splits <- split_and_scale_data(organized_data, train_prop = 0.6, valid_prop = 0.2)
 
-# 6. Extract matrices for modeling
+# Extract matrices for modeling
 X_train <- data_splits$X_train
 y_train <- data_splits$y_train
 X_valid <- data_splits$X_valid
@@ -86,7 +86,7 @@ y_valid <- data_splits$y_valid
 X_test  <- data_splits$X_test
 y_test  <- data_splits$y_test
 
-# 7. Check dimensions
+# Check dimensions
 cat("Train: ", dim(X_train), length(y_train), "\n")
 cat("Valid: ", dim(X_valid), length(y_valid), "\n")
 cat("Test:  ", dim(X_test), length(y_test), "\n")
